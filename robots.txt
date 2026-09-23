@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://clgp44.github.io/auCamelia/sitemap.xml
+Sitemap: https://aucamelia.github.io/auCamelia-site/sitemap.xml
