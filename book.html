@@ -88,10 +88,9 @@
     <span class="eyebrow">04 — Digital twin</span>
     <div>
       <h2>A quadruped developed on its digital twin, before it ever walks.</h2>
-      <p class="kicker-text">A legged robot, simulated in Gazebo, with a live 3D digital twin shown beside the camera feed in the teleoperation interface. The twin is driven by the commands the robot receives (<code>/cmd_vel</code>, gait, attitude) rather than by its sensors, so it moves smoothly at 60&nbsp;Hz and behaves identically on the real robot and in simulation — the same interfaces, the same software.</p>
+      <p class="kicker-text">A legged robot, simulated in Gazebo as a digital twin that exposes the same API as the genuine hardware: the control software and the operator interface run unchanged against the twin or the real robot, so programs are developed and fine-tuned on the twin before they are deployed.</p>
       <p class="kicker-text">The walking policy is trained in MuJoCo with PPO and an asymmetric actor-critic: a 2&nbsp;×&nbsp;64 MLP actor that sees only what the real sensors provide (joint angles, IMU, gait phase) and outputs a bounded residual over a deterministic trot generator driving the 12 servomotors at 50&nbsp;Hz, while the critic is given privileged simulation data — terrain ahead, true velocity, foot contact — and is discarded after training. A model-based route (JEPA with CEM planning) was evaluated and retired in favour of this one.</p>
-      <p class="kicker-text">The same approach — develop and fine-tune on a twin, then deploy on the genuine hardware — is the next step for a drone, and the two platforms are intended to work together.</p>
-      <div class="media-frame"><video autoplay muted loop playsinline preload="metadata" width="640" height="249" aria-label="Robot camera feed (left) and live 3D digital twin following the robot (right), in the teleoperation interface"><source src="assets/twin-demo.webm" type="video/webm"><source src="assets/twin-demo.mp4" type="video/mp4"></video></div>
+      <div class="media-row"><div class="media-frame"><img src="assets/twin-view1.png" alt="Quadruped digital twin, three-quarter view (RViz render)" loading="lazy"></div><div class="media-frame"><img src="assets/twin-view2.png" alt="Quadruped digital twin, front-low view (RViz render)" loading="lazy"></div><div class="media-frame"><img src="assets/twin-view3.png" alt="Quadruped digital twin, rear three-quarter view (RViz render)" loading="lazy"></div></div>
     </div>
   </div>
 </section>
