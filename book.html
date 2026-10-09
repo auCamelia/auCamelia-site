@@ -54,7 +54,7 @@
       <p class="kicker-text">A simulation of a test bench built on the ROS 2 framework, using a PDDL solver for task planning. A user states a goal in plain language — "measure diameter hole H013" — and the system plans and executes the sequence itself, instead of a hand-written program.</p>
       <p class="kicker-text">The test bench is built around a Fanuc CRX-20 cobot fitted with a Stäubli quick-change interface, letting the robot swap its own end-effectors depending on the task.</p>
       <p class="kicker-text">It's also the proof point for a broader capability: complex machines — measurement systems, robotic cells — are often only operable by a small group of specialists, a bottleneck of dependency, long training, and equipment left under-used outside the hours those specialists are available. The test bench's natural-language layer shows that a plain instruction can be translated into an executable plan without sacrificing the rigour of the underlying control — a capability that extends wherever a complex machine could be opened up to more of the team.</p>
-      <div class="media-frame"><img src="assets/measure_h13.gif" alt="Natural-language command 'measure diameter hole H013' planned and executed on the ROS 2 / PDDL test bench" loading="lazy"></div>
+      <div class="media-frame"><video autoplay muted loop playsinline preload="metadata" width="360" height="438" aria-label="Natural-language command 'measure diameter hole H013' planned and executed on the ROS 2 / PDDL test bench"><source src="assets/measure_h13.webm" type="video/webm"><source src="assets/measure_h13.mp4" type="video/mp4"></video></div>
     </div>
   </div>
 </section>
@@ -66,7 +66,7 @@
       <h2>Comparing manual, hybrid, and automated — on more than one criterion at once.</h2>
       <p class="kicker-text">The same planning core also drives M4DM's decision-comparison work: modelling different task allocations between operator and machine, and comparing the resulting plans on cycle time, cost, ergonomics, and flexibility — side by side, not one estimate at a time.</p>
       <p class="kicker-text">Applied to an aircraft fuselage assembly case: fastening two fuselage sections along their orbital joint, comparing a full-manual process against a gantry-assisted hybrid one, with a Gantt-based comparison of makespan and per-resource occupancy.</p>
-      <div class="media-frame"><img src="assets/gantt-comparator.gif" alt="M4DM Gantt comparison of the fuselage orbital-joint fastening case: full-manual vs. gantry-assisted hybrid, four operators each" loading="lazy"></div>
+      <div class="media-frame"><video autoplay muted loop playsinline preload="metadata" width="1080" height="600" aria-label="M4DM Gantt comparison of the fuselage orbital-joint fastening case: full-manual vs. gantry-assisted hybrid, four operators each"><source src="assets/gantt-comparator.webm" type="video/webm"><source src="assets/gantt-comparator.mp4" type="video/mp4"></video></div>
     </div>
   </div>
 </section>
@@ -78,7 +78,7 @@
       <h2>Sub-millimetre relocation, validated in simulation before hardware.</h2>
       <p class="kicker-text">A splice-relocation concept based on a Zivid 2 camera, validated using Gazebo simulation before committing to physical testing. Targets: lateral position &lt; 0.5&nbsp;mm, tilt &lt; 1°, distance to surface &lt; 0.1&nbsp;mm, with Cp &gt; 1.66 and Cpk &gt; 1.33.</p>
       <p class="kicker-text">The modelling validates the concept before investing in a representative proof of concept for qualification — the same discipline the method applies everywhere else.</p>
-      <div class="media-frame"><img src="assets/zivid.gif" alt="Zivid 2 camera sub-millimetre splice relocation, validated in Gazebo simulation" loading="lazy"></div>
+      <div class="media-frame"><video autoplay muted loop playsinline preload="metadata" width="600" height="403" aria-label="Zivid 2 camera sub-millimetre splice relocation, validated in Gazebo simulation"><source src="assets/zivid.webm" type="video/webm"><source src="assets/zivid.mp4" type="video/mp4"></video></div>
     </div>
   </div>
 </section>
@@ -105,6 +105,7 @@
 </footer>
 
 <script src="assets/main.js"></script>
+<script src="assets/video.js"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "908df0e8a0234128af22f7f1e9acba51"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

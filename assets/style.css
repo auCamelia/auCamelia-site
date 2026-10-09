@@ -241,7 +241,7 @@ footer .fine { font-family: var(--mono); font-size: 12px; color: var(--graphite)
 
 /* ---------- media frame (actual demo media) ---------- */
 .media-frame { border: 1px solid var(--rule); margin-top: 18px; line-height: 0; }
-.media-frame img { display: block; width: 100%; height: auto; }
+.media-frame img, .media-frame video { display: block; width: 100%; height: auto; }
 
 /* ---------- placeholder media block ---------- */
 .media-placeholder {
