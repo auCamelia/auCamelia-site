@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cas d'usage — Au Camélia</title>
-<meta name="description" content="Exemples de mise en œuvre de M4DM : une architecture de contrôle robotique pilotée par IA, un arbitrage manuel-vs-automatisé, une preuve de concept en vision industrielle, un quadrupède mis au point sur son jumeau numérique — d'autres à venir.">
+<meta name="description" content="Exemples de mise en œuvre de M4DM : une architecture de contrôle robotique pilotée par IA, un arbitrage manuel-vs-automatisé, une preuve de concept en vision industrielle — d'autres à venir.">
 <link rel="canonical" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
 <link rel="alternate" hreflang="en" href="https://aucamelia.github.io/auCamelia-site/book.html">
 <link rel="alternate" hreflang="fr" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
@@ -12,12 +12,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Au Camélia">
 <meta property="og:title" content="Cas d'usage — Au Camélia">
-<meta property="og:description" content="Exemples de mise en œuvre de M4DM : une architecture de contrôle robotique pilotée par IA, un arbitrage manuel-vs-automatisé, une preuve de concept en vision industrielle, un quadrupède mis au point sur son jumeau numérique — d'autres à venir.">
+<meta property="og:description" content="Exemples de mise en œuvre de M4DM : une architecture de contrôle robotique pilotée par IA, un arbitrage manuel-vs-automatisé, une preuve de concept en vision industrielle — d'autres à venir.">
 <meta property="og:url" content="https://aucamelia.github.io/auCamelia-site/fr/book.html">
 <meta property="og:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cas d'usage — Au Camélia">
-<meta name="twitter:description" content="Exemples de mise en œuvre de M4DM : une architecture de contrôle robotique pilotée par IA, un arbitrage manuel-vs-automatisé, une preuve de concept en vision industrielle, un quadrupède mis au point sur son jumeau numérique — d'autres à venir.">
+<meta name="twitter:description" content="Exemples de mise en œuvre de M4DM : une architecture de contrôle robotique pilotée par IA, un arbitrage manuel-vs-automatisé, une preuve de concept en vision industrielle — d'autres à venir.">
 <meta name="twitter:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
   <div class="wrap">
     <span class="eyebrow">Modélisation</span>
     <h1>Démontrée, pas affirmée.</h1>
-    <p class="lede">Exemples de mise en œuvre de M4DM : une architecture de contrôle robotique pilotée par IA, un arbitrage manuel-vs-automatisé, une preuve de concept en vision industrielle, un quadrupède mis au point sur son jumeau numérique — d'autres à venir.</p>
+    <p class="lede">Exemples de mise en œuvre de M4DM : une architecture de contrôle robotique pilotée par IA, un arbitrage manuel-vs-automatisé, une preuve de concept en vision industrielle — d'autres à venir.</p>
   </div>
 </header>
 
@@ -79,18 +79,6 @@
       <p class="kicker-text">Un concept de relocalisation d'éclisse basé sur une caméra Zivid 2, validé par simulation Gazebo avant tout essai physique. Objectifs : position latérale &lt; 0,5&nbsp;mm, inclinaison &lt; 1°, distance à la surface &lt; 0,1&nbsp;mm, avec Cp&nbsp;&gt; 1,66 et Cpk&nbsp;&gt; 1,33.</p>
       <p class="kicker-text">La modélisation valide le concept avant d'investir dans une preuve de concept représentative pour la qualification — la même rigueur que la méthode applique partout ailleurs.</p>
       <div class="media-frame"><video autoplay muted loop playsinline preload="metadata" width="600" height="403" aria-label="Relocalisation sous le millimètre par caméra Zivid 2, validée en simulation Gazebo"><source src="../assets/zivid.webm" type="video/webm"><source src="../assets/zivid.mp4" type="video/mp4"></video></div>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap grid-label">
-    <span class="eyebrow">04 — Jumeau numérique</span>
-    <div>
-      <h2>Un quadrupède mis au point sur son jumeau numérique, avant même de marcher.</h2>
-      <p class="kicker-text">Un robot à pattes, simulé sous Gazebo sous la forme d'un jumeau numérique qui expose la même API que le matériel réel : le logiciel de commande et l'interface opérateur tournent à l'identique sur le jumeau ou sur le robot réel, ce qui permet de développer et de mettre au point les programmes sur le jumeau avant de les déployer.</p>
-      <p class="kicker-text">La politique de marche est entraînée sous MuJoCo avec PPO et un acteur-critique asymétrique : un acteur MLP 2&nbsp;×&nbsp;64 qui ne voit que ce que fournissent les vrais capteurs (angles articulaires, IMU, phase de marche) et produit un résiduel borné sur un générateur de trot déterministe pilotant les 12 servomoteurs à 50&nbsp;Hz, tandis que le critique reçoit des données de simulation privilégiées — terrain devant, vitesse réelle, contacts des pieds — et est écarté après l'entraînement. Une voie basée sur un modèle du monde (JEPA avec planification CEM) a été évaluée puis abandonnée au profit de celle-ci.</p>
-      <div class="media-row"><div class="media-frame"><img src="../assets/twin-view1.png" alt="Jumeau numérique du quadrupède, vue trois-quarts (rendu RViz)" loading="lazy"></div><div class="media-frame"><img src="../assets/twin-view2.png" alt="Jumeau numérique du quadrupède, vue de face basse (rendu RViz)" loading="lazy"></div><div class="media-frame"><img src="../assets/twin-view3.png" alt="Jumeau numérique du quadrupède, vue trois-quarts arrière (rendu RViz)" loading="lazy"></div></div>
     </div>
   </div>
 </section>

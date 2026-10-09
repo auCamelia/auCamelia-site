@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Case studies — Au Camélia</title>
-<meta name="description" content="Examples of M4DM in practice: an AI-driven robotic control architecture, a manual-vs-automated trade-off, a machine-vision proof of concept, a quadruped developed on its digital twin — with more to come.">
+<meta name="description" content="Examples of M4DM in practice: an AI-driven robotic control architecture, a manual-vs-automated trade-off, a machine-vision proof of concept — with more to come.">
 <link rel="canonical" href="https://aucamelia.github.io/auCamelia-site/book.html">
 <link rel="alternate" hreflang="en" href="https://aucamelia.github.io/auCamelia-site/book.html">
 <link rel="alternate" hreflang="fr" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
@@ -12,12 +12,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Au Camélia">
 <meta property="og:title" content="Case studies — Au Camélia">
-<meta property="og:description" content="Examples of M4DM in practice: an AI-driven robotic control architecture, a manual-vs-automated trade-off, a machine-vision proof of concept, a quadruped developed on its digital twin — with more to come.">
+<meta property="og:description" content="Examples of M4DM in practice: an AI-driven robotic control architecture, a manual-vs-automated trade-off, a machine-vision proof of concept — with more to come.">
 <meta property="og:url" content="https://aucamelia.github.io/auCamelia-site/book.html">
 <meta property="og:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Case studies — Au Camélia">
-<meta name="twitter:description" content="Examples of M4DM in practice: an AI-driven robotic control architecture, a manual-vs-automated trade-off, a machine-vision proof of concept, a quadruped developed on its digital twin — with more to come.">
+<meta name="twitter:description" content="Examples of M4DM in practice: an AI-driven robotic control architecture, a manual-vs-automated trade-off, a machine-vision proof of concept — with more to come.">
 <meta name="twitter:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
   <div class="wrap">
     <span class="eyebrow">Modelling</span>
     <h1>Demonstrated, not asserted.</h1>
-    <p class="lede">Examples of M4DM in practice: an AI-driven robotic control architecture, a manual-vs-automated trade-off, a machine-vision proof of concept, a quadruped developed on its digital twin — with more to come.</p>
+    <p class="lede">Examples of M4DM in practice: an AI-driven robotic control architecture, a manual-vs-automated trade-off, a machine-vision proof of concept — with more to come.</p>
   </div>
 </header>
 
@@ -79,18 +79,6 @@
       <p class="kicker-text">A splice-relocation concept based on a Zivid 2 camera, validated using Gazebo simulation before committing to physical testing. Targets: lateral position &lt; 0.5&nbsp;mm, tilt &lt; 1°, distance to surface &lt; 0.1&nbsp;mm, with Cp &gt; 1.66 and Cpk &gt; 1.33.</p>
       <p class="kicker-text">The modelling validates the concept before investing in a representative proof of concept for qualification — the same discipline the method applies everywhere else.</p>
       <div class="media-frame"><video autoplay muted loop playsinline preload="metadata" width="600" height="403" aria-label="Zivid 2 camera sub-millimetre splice relocation, validated in Gazebo simulation"><source src="assets/zivid.webm" type="video/webm"><source src="assets/zivid.mp4" type="video/mp4"></video></div>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap grid-label">
-    <span class="eyebrow">04 — Digital twin</span>
-    <div>
-      <h2>A quadruped developed on its digital twin, before it ever walks.</h2>
-      <p class="kicker-text">A legged robot, simulated in Gazebo as a digital twin that exposes the same API as the genuine hardware: the control software and the operator interface run unchanged against the twin or the real robot, so programs are developed and fine-tuned on the twin before they are deployed.</p>
-      <p class="kicker-text">The walking policy is trained in MuJoCo with PPO and an asymmetric actor-critic: a 2&nbsp;×&nbsp;64 MLP actor that sees only what the real sensors provide (joint angles, IMU, gait phase) and outputs a bounded residual over a deterministic trot generator driving the 12 servomotors at 50&nbsp;Hz, while the critic is given privileged simulation data — terrain ahead, true velocity, foot contact — and is discarded after training. A model-based route (JEPA with CEM planning) was evaluated and retired in favour of this one.</p>
-      <div class="media-row"><div class="media-frame"><img src="assets/twin-view1.png" alt="Quadruped digital twin, three-quarter view (RViz render)" loading="lazy"></div><div class="media-frame"><img src="assets/twin-view2.png" alt="Quadruped digital twin, front-low view (RViz render)" loading="lazy"></div><div class="media-frame"><img src="assets/twin-view3.png" alt="Quadruped digital twin, rear three-quarter view (RViz render)" loading="lazy"></div></div>
     </div>
   </div>
 </section>

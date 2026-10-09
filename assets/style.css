@@ -264,7 +264,3 @@ footer .fine { font-family: var(--mono); font-size: 12px; color: var(--graphite)
 .method-list .step .tag { font-family: var(--mono); font-size: 12px; color: var(--camellia); letter-spacing: 0.06em; }
 .method-list .step h4 { font-family: var(--display); font-size: 16px; margin: 0 0 4px; }
 .method-list .step p { margin: 0; color: var(--ink-soft); font-size: 14.5px; }
-.media-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
-.media-row .media-frame { margin-top: 0; }
-.media-row img { aspect-ratio: 1 / 1; object-fit: contain; background: #2b2b2b; }
-@media (max-width: 640px) { .media-row { grid-template-columns: 1fr; } }
