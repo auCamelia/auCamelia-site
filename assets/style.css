@@ -264,3 +264,14 @@ footer .fine { font-family: var(--mono); font-size: 12px; color: var(--graphite)
 .method-list .step .tag { font-family: var(--mono); font-size: 12px; color: var(--camellia); letter-spacing: 0.06em; }
 .method-list .step h4 { font-family: var(--display); font-size: 16px; margin: 0 0 4px; }
 .method-list .step p { margin: 0; color: var(--ink-soft); font-size: 14.5px; }
+
+/* ---------- homepage use-case icons ---------- */
+.usecase-band { background: var(--camellia); color: #fff; padding: 28px 0; }
+.usecases { display: flex; justify-content: center; gap: clamp(36px, 10vw, 120px); }
+.uc { display: flex; flex-direction: column; align-items: center; gap: 12px; color: #fff; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; }
+.uc:hover { color: #fff; text-decoration: none; }
+.uc:hover span { text-decoration: underline; text-underline-offset: 4px; }
+.uc svg { display: block; transition: transform 0.2s; }
+.uc:hover svg { transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .uc svg { transition: none; } .uc:hover svg { transform: none; } }
+@media (max-width: 640px) { .uc svg { width: 52px; height: 52px; } .uc { font-size: 11px; } }
