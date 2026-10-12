@@ -274,3 +274,4 @@ footer .fine { font-family: var(--mono); font-size: 12px; color: var(--graphite)
 .uc:hover svg { transform: translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { .uc svg { transition: none; } .uc:hover svg { transform: none; } }
 @media (max-width: 640px) { .usecases { gap: 28px; } .uc { gap: 10px; font-size: 10px; letter-spacing: 0.04em; } .uc svg { width: 44px; height: 44px; } }
+.wrap > .usecases:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
