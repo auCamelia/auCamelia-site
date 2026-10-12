@@ -266,12 +266,12 @@ footer .fine { font-family: var(--mono); font-size: 12px; color: var(--graphite)
 .method-list .step p { margin: 0; color: var(--ink-soft); font-size: 14.5px; }
 
 /* ---------- homepage use-case icons (inside the timeline band) ---------- */
-.usecases { display: flex; justify-content: center; gap: clamp(48px, 14vw, 180px); margin-top: 22px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.3); }
+.usecases { display: flex; justify-content: flex-start; gap: clamp(40px, 8vw, 96px); margin-top: 22px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.3); }
 .uc { display: flex; align-items: center; gap: 14px; color: #fff; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.35; text-align: left; }
 .uc:hover { color: #fff; text-decoration: none; }
 .uc:hover span { text-decoration: underline; text-underline-offset: 4px; }
 .uc svg { display: block; flex: none; transition: transform 0.2s; }
 .uc:hover svg { transform: translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { .uc svg { transition: none; } .uc:hover svg { transform: none; } }
-@media (max-width: 640px) { .usecases { gap: 28px; } .uc { gap: 10px; font-size: 10px; letter-spacing: 0.04em; } .uc svg { width: 44px; height: 44px; } }
+@media (max-width: 640px) { .usecases { gap: 24px; } .uc { gap: 10px; font-size: 10px; letter-spacing: 0.04em; } .uc svg { width: 44px; height: 44px; } }
 .wrap > .usecases:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
