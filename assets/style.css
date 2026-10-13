@@ -283,3 +283,14 @@ svg.logo-mark { aspect-ratio: 1 / 1; }
 @keyframes petal-settle { from { transform: translate(-45px, 45px) rotate(-180deg); } to { transform: translate(0, 0) rotate(0); } }
 @keyframes petal-settle-hover { from { transform: translate(-45px, 45px) rotate(-180deg); } to { transform: translate(0, 0) rotate(0); } }
 @media (prefers-reduced-motion: reduce) { .logo-mark .flyer, .brand:hover .logo-mark .flyer { animation: none; } }
+
+/* Trot timing diagram (case study 03) */
+.gait-fig { margin: 22px 0; }
+.gait-fig svg { display: block; width: 100%; max-width: 560px; height: auto; }
+.gait-fig .gl, .gait-fig .gr, .gait-fig .gn { font-family: var(--mono); font-size: 11px; fill: var(--graphite); }
+.gait-fig .gn { fill: var(--ink); text-anchor: middle; }
+.gait-fig .sw { fill: none; stroke: var(--rule); }
+.gait-fig .st { fill: var(--camellia); }
+.gait-fig .c4 { fill: var(--rule); }
+.gait-fig .c2 { fill: var(--camellia-tint); }
+.gait-fig figcaption { font-family: var(--mono); font-size: 12px; color: var(--graphite); margin-top: 8px; }
