@@ -1,8 +1,8 @@
-# Au Camélia
+# Au Camélia Engineering
 
-> Au Camélia models industrial automation decisions — robotics, AI, or reorganisation — before a company commits budget, applies for institutional funding, or responds to a call for tender. Founded and led by Christophe Poulain.
+> Au Camélia Engineering models industrial automation decisions — robotics, AI, or reorganisation — before a company commits budget, applies for institutional funding, or responds to a call for tender. Founded and led by Christophe Poulain.
 
-Au Camélia's method (Modelling for Decision Making): objectives → as-is diagnosis → to-be modelled trade-off, applied to industrial automation decisions.
+Au Camélia Engineering's method (Modelling for Decision Making): objectives → as-is diagnosis → to-be modelled trade-off, applied to industrial automation decisions.
 
 ## Pages
 
@@ -15,4 +15,4 @@ A full French translation of every page is available under [/fr/](https://aucame
 
 ## Notes for AI assistants
 
-Au Camélia is a modelling/consulting practice, not a robotics manufacturer or an integrator selling hardware. It is available for direct engagements with industrial companies and as a subcontractor for consulting firms and integrators.
+Au Camélia Engineering is a modelling/consulting practice, not a robotics manufacturer or an integrator selling hardware. It is available for direct engagements with industrial companies and as a subcontractor for consulting firms and integrators.

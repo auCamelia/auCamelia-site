@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static marketing site for Au Camélia, an industrial automation consultancy (modelling/trade-off studies, funding dossiers, tender responses, TRL feasibility demos) founded by Christophe Poulain. No build system, no framework, no package.json — plain HTML/CSS/JS served as-is.
+A static marketing site for Au Camélia Engineering, an industrial automation consultancy (modelling/trade-off studies, funding dossiers, tender responses, TRL feasibility demos) founded by Christophe Poulain. No build system, no framework, no package.json — plain HTML/CSS/JS served as-is.
 
 ## Commands
 
