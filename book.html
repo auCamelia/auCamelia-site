@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Case studies — Au Camélia Engineering</title>
-<meta name="description" content="Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture and a machine-vision proof of concept — with more to come.">
+<meta name="description" content="Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture, a machine-vision proof of concept and a quadruped developed on its digital twin — with more to come.">
 <link rel="canonical" href="https://aucamelia.github.io/auCamelia-site/book.html">
 <link rel="alternate" hreflang="en" href="https://aucamelia.github.io/auCamelia-site/book.html">
 <link rel="alternate" hreflang="fr" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
@@ -12,12 +12,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Au Camélia Engineering">
 <meta property="og:title" content="Case studies — Au Camélia Engineering">
-<meta property="og:description" content="Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture and a machine-vision proof of concept — with more to come.">
+<meta property="og:description" content="Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture, a machine-vision proof of concept and a quadruped developed on its digital twin — with more to come.">
 <meta property="og:url" content="https://aucamelia.github.io/auCamelia-site/book.html">
 <meta property="og:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Case studies — Au Camélia Engineering">
-<meta name="twitter:description" content="Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture and a machine-vision proof of concept — with more to come.">
+<meta name="twitter:description" content="Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture, a machine-vision proof of concept and a quadruped developed on its digital twin — with more to come.">
 <meta name="twitter:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
   <div class="wrap">
     <span class="eyebrow">Modelling</span>
     <h1>Demonstrated, not asserted.</h1>
-    <p class="lede">Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture and a machine-vision proof of concept — with more to come.</p>
+    <p class="lede">Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture, a machine-vision proof of concept and a quadruped developed on its digital twin — with more to come.</p>
   </div>
 </header>
 
@@ -67,6 +67,19 @@
       <p class="kicker-text">A splice-relocation concept based on a Zivid 2 camera, validated using Gazebo simulation before committing to physical testing. Targets: lateral position &lt; 0.5&nbsp;mm, tilt &lt; 1°, distance to surface &lt; 0.1&nbsp;mm, with Cp &gt; 1.66 and Cpk &gt; 1.33.</p>
       <p class="kicker-text">The modelling validates the concept before investing in a representative proof of concept for qualification — the same discipline the method applies everywhere else.</p>
       <div class="media-frame"><video autoplay muted loop playsinline preload="metadata" width="600" height="403" aria-label="Zivid 2 camera sub-millimetre splice relocation, validated in Gazebo simulation"><source src="assets/zivid.webm" type="video/webm"><source src="assets/zivid.mp4" type="video/mp4"></video></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="digital-twin">
+  <div class="wrap grid-label">
+    <span class="eyebrow">03 — Digital twin</span>
+    <div>
+      <h2>A quadruped developed on its digital twin, before it ever walks.</h2>
+      <p class="kicker-text">DOGZILLA is a 12-DOF quadruped (3 joints × 4 legs) used as a test subject: a parametric trot generator at 50&nbsp;Hz, topped by a reinforcement-learning policy (PPO, asymmetric actor-critic) that adds a bounded residual to the gait. It relies on proprioception alone — no camera, no lidar.</p>
+      <p class="kicker-text">Principle: the digital twin exposes the same API as the real robot, so the control software and the operator interface run unchanged against the twin or the hardware. The twin is a kinematic model driven by the commands the robot receives rather than by its sensors, so it moves smoothly at 60&nbsp;Hz while firmware telemetry arrives only every ~130&nbsp;ms; telemetry is merely compared with the model — error and lag are displayed — and re-synchronises it at start-up. Gazebo adds physics, a simulated camera and LiDAR on top of the same 12 joint angles.</p>
+      <p class="kicker-text">Why: programs are developed, fine-tuned and trained on the twin before they are deployed — no risk to the hardware, iterations in minutes, and a policy that only ever sees what the real sensors will provide. The limits are stated: the twin is kinematic (no balance, slip or contact), so it shows what the robot is supposed to do, not a fall — which is what the physics simulation is for.</p>
+      <div class="media-frame"><video autoplay muted loop playsinline preload="auto" width="960" height="396" aria-label=""><source src="assets/twin_sequence.mp4" type="video/mp4"><source src="assets/twin_sequence.webm" type="video/webm"></video></div>
     </div>
   </div>
 </section>

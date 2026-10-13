@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cas d'usage — Au Camélia Engineering</title>
-<meta name="description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA et une preuve de concept en vision industrielle — d'autres à venir.">
+<meta name="description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle et un quadrupède développé sur son jumeau numérique — d'autres à venir.">
 <link rel="canonical" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
 <link rel="alternate" hreflang="en" href="https://aucamelia.github.io/auCamelia-site/book.html">
 <link rel="alternate" hreflang="fr" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
@@ -12,12 +12,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Au Camélia Engineering">
 <meta property="og:title" content="Cas d'usage — Au Camélia Engineering">
-<meta property="og:description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA et une preuve de concept en vision industrielle — d'autres à venir.">
+<meta property="og:description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle et un quadrupède développé sur son jumeau numérique — d'autres à venir.">
 <meta property="og:url" content="https://aucamelia.github.io/auCamelia-site/fr/book.html">
 <meta property="og:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cas d'usage — Au Camélia Engineering">
-<meta name="twitter:description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA et une preuve de concept en vision industrielle — d'autres à venir.">
+<meta name="twitter:description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle et un quadrupède développé sur son jumeau numérique — d'autres à venir.">
 <meta name="twitter:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
   <div class="wrap">
     <span class="eyebrow">Modélisation</span>
     <h1>Démontrée, pas affirmée.</h1>
-    <p class="lede">Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA et une preuve de concept en vision industrielle — d'autres à venir.</p>
+    <p class="lede">Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle et un quadrupède développé sur son jumeau numérique — d'autres à venir.</p>
   </div>
 </header>
 
@@ -67,6 +67,19 @@
       <p class="kicker-text">Un concept de relocalisation d'éclisse basé sur une caméra Zivid 2, validé par simulation Gazebo avant tout essai physique. Objectifs : position latérale &lt; 0,5&nbsp;mm, inclinaison &lt; 1°, distance à la surface &lt; 0,1&nbsp;mm, avec Cp&nbsp;&gt; 1,66 et Cpk&nbsp;&gt; 1,33.</p>
       <p class="kicker-text">La modélisation valide le concept avant d'investir dans une preuve de concept représentative pour la qualification — la même rigueur que la méthode applique partout ailleurs.</p>
       <div class="media-frame"><video autoplay muted loop playsinline preload="metadata" width="600" height="403" aria-label="Relocalisation sous le millimètre par caméra Zivid 2, validée en simulation Gazebo"><source src="../assets/zivid.webm" type="video/webm"><source src="../assets/zivid.mp4" type="video/mp4"></video></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="digital-twin">
+  <div class="wrap grid-label">
+    <span class="eyebrow">03 — Jumeau numérique</span>
+    <div>
+      <h2>Un quadrupède développé sur son jumeau numérique, avant même qu'il ne marche.</h2>
+      <p class="kicker-text">DOGZILLA est un quadrupède à 12 degrés de liberté (3 articulations × 4 pattes) servant de sujet d'essai : un générateur de trot paramétrique à 50&nbsp;Hz, complété par une politique d'apprentissage par renforcement (PPO, acteur-critique asymétrique) qui ajoute un résiduel borné à la marche. Elle repose sur la seule proprioception — ni caméra, ni lidar.</p>
+      <p class="kicker-text">Principe : le jumeau numérique expose la même API que le robot réel ; le logiciel de contrôle et l'interface opérateur tournent donc sans modification sur le jumeau ou sur le matériel. Le jumeau est un modèle cinématique piloté par les commandes reçues par le robot plutôt que par ses capteurs : il se meut de façon fluide à 60&nbsp;Hz alors que la télémétrie du firmware n'arrive que toutes les ~130&nbsp;ms ; la télémétrie sert uniquement à comparer avec le modèle — erreur et retard sont affichés — et à le resynchroniser au démarrage. Gazebo ajoute la physique, une caméra et un LiDAR simulés sur les mêmes 12 angles articulaires.</p>
+      <p class="kicker-text">Pourquoi : les programmes sont développés, mis au point et entraînés sur le jumeau avant d'être déployés — aucun risque pour le matériel, des itérations en quelques minutes, et une politique qui ne voit que ce que les vrais capteurs fourniront. Les limites sont assumées : le jumeau est cinématique (ni équilibre, ni glissement, ni contact) ; il montre ce que le robot est censé faire, pas une chute — c'est le rôle de la simulation physique.</p>
+      <div class="media-frame"><video autoplay muted loop playsinline preload="auto" width="960" height="396" aria-label=""><source src="../assets/twin_sequence.mp4" type="video/mp4"><source src="../assets/twin_sequence.webm" type="video/webm"></video></div>
     </div>
   </div>
 </section>
