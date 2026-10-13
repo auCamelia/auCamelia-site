@@ -276,10 +276,10 @@ footer .fine { font-family: var(--mono); font-size: 12px; color: var(--graphite)
 @media (max-width: 640px) { .usecases { gap: 24px; } .uc { gap: 10px; font-size: 10px; letter-spacing: 0.04em; } .uc svg { width: 44px; height: 44px; } }
 .wrap > .usecases:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
 
-/* ---------- animated nav icon: the detached camellia drifts away, then settles back ---------- */
-svg.logo-mark { aspect-ratio: 1 / 1; overflow: visible; }
-.logo-mark .flyer { transform-box: fill-box; transform-origin: center; animation: petal-fly 3.2s ease-in-out 0.8s 1 both; }
-.brand:hover .logo-mark .flyer { animation: petal-fly-hover 3.2s ease-in-out 1 both; }
-@keyframes petal-fly { 0% { transform: translate(0, 0) rotate(0); } 40% { transform: translate(46px, -62px) rotate(90deg); } 100% { transform: translate(0, 0) rotate(360deg); } }
-@keyframes petal-fly-hover { 0% { transform: translate(0, 0) rotate(0); } 40% { transform: translate(46px, -62px) rotate(90deg); } 100% { transform: translate(0, 0) rotate(360deg); } }
+/* ---------- animated nav icon: the detached camellia starts in the square's free slot and settles at its logo position ---------- */
+svg.logo-mark { aspect-ratio: 1 / 1; }
+.logo-mark .flyer { transform-box: fill-box; transform-origin: center; animation: petal-settle 1.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.8s 1 both; }
+.brand:hover .logo-mark .flyer { animation: petal-settle-hover 1.8s cubic-bezier(0.22, 0.61, 0.36, 1) 1 both; }
+@keyframes petal-settle { from { transform: translate(-45px, 45px) rotate(-180deg); } to { transform: translate(0, 0) rotate(0); } }
+@keyframes petal-settle-hover { from { transform: translate(-45px, 45px) rotate(-180deg); } to { transform: translate(0, 0) rotate(0); } }
 @media (prefers-reduced-motion: reduce) { .logo-mark .flyer, .brand:hover .logo-mark .flyer { animation: none; } }
