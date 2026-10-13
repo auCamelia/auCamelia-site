@@ -2,7 +2,7 @@
   
   <defs>
     <g id="flowerSmall">
-      <g fill="none" stroke="#9C2954" stroke-width="2">
+      <g fill="none" stroke="#9C2954" stroke-width="3.2">
         <circle cx="9"    cy="0"     r="9"/>
         <circle cx="4.5"  cy="7.79"  r="9"/>
         <circle cx="-4.5" cy="7.79"  r="9"/>
