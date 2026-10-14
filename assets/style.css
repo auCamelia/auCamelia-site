@@ -296,6 +296,6 @@ svg.logo-mark { aspect-ratio: 1 / 1; }
 .gait-fig figcaption { font-family: var(--mono); font-size: 12px; color: var(--graphite); margin-top: 8px; }
 
 /* Uniform video frame: same 16:9 box and backdrop, whatever the source ratio */
-.media-frame.is-video { aspect-ratio: 16 / 9; background: var(--ink); border-color: var(--ink); }
+.media-frame.is-video { aspect-ratio: 16 / 9; background: var(--camellia); border-color: var(--camellia); }
 .media-frame.is-video video { width: 100%; height: 100%; object-fit: contain; }
 .media-cap { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--graphite); margin: 8px 0 0; }
