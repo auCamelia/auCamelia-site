@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cas d'usage — Au Camélia Engineering</title>
-<meta name="description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle et un quadrupède développé sur son jumeau numérique — d'autres à venir.">
+<meta name="description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle, un jumeau numérique de quadrupède et un essaim de 12 drones — d'autres à venir.">
 <link rel="canonical" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
 <link rel="alternate" hreflang="en" href="https://aucamelia.github.io/auCamelia-site/book.html">
 <link rel="alternate" hreflang="fr" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
@@ -12,17 +12,17 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Au Camélia Engineering">
 <meta property="og:title" content="Cas d'usage — Au Camélia Engineering">
-<meta property="og:description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle et un quadrupède développé sur son jumeau numérique — d'autres à venir.">
+<meta property="og:description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle, un jumeau numérique de quadrupède et un essaim de 12 drones — d'autres à venir.">
 <meta property="og:url" content="https://aucamelia.github.io/auCamelia-site/fr/book.html">
 <meta property="og:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cas d'usage — Au Camélia Engineering">
-<meta name="twitter:description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle et un quadrupède développé sur son jumeau numérique — d'autres à venir.">
+<meta name="twitter:description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle, un jumeau numérique de quadrupède et un essaim de 12 drones — d'autres à venir.">
 <meta name="twitter:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261014f">
+<link rel="stylesheet" href="../assets/style.css?v=20261014g">
 </head>
 <body>
 
@@ -42,7 +42,7 @@
   <div class="wrap">
     <span class="eyebrow">Modélisation</span>
     <h1>Démontrée, pas affirmée.</h1>
-    <p class="lede">Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle et un quadrupède développé sur son jumeau numérique — d'autres à venir.</p>
+    <p class="lede">Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle, un jumeau numérique de quadrupède et un essaim de 12 drones — d'autres à venir.</p>
   </div>
 </header>
 
@@ -84,6 +84,21 @@
       <p class="kicker-text">Les actions sont chargées sur le composant STM32 et accessibles via la bibliothèque DOGZILLALib. La position des moteurs n'est rafraîchie que toutes les ~130&nbsp;ms, et la cinématique inverse sur laquelle s'appuie l'allure du trot n'est pas directement accessible. D'où l'architecture du jumeau : il expose la même API que le robot réel et reconstruit lui-même l'allure et la cinématique à partir des commandes reçues par le robot, et non de ses capteurs.</p>
       <div class="media-frame is-video"><video autoplay muted loop playsinline preload="auto" width="1280" height="720" aria-label="Jumeau numérique du quadrupède suivant une séquence de mouvements en simulation" poster="../assets/poster-digital-twin.jpg"><source src="../assets/twin_sequence.mp4" type="video/mp4"><source src="../assets/twin_sequence.webm" type="video/webm"></video></div>
       <p class="media-cap">Jumeau numérique du quadrupède · simulation Gazebo</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="drone-swarm">
+  <div class="wrap grid-label">
+    <span class="eyebrow">04 — Essaim de drones</span>
+    <div>
+      <h2>Douze drones Crazyflie, simulés avec le vrai contrôleur du firmware.</h2>
+      <p class="kicker-text">Un essaim de 12 nano-drones Bitcraze Crazyflie 2.1+ construit comme un jumeau numérique, pour écrire et tester des scénarios de formation avant de les confier à de vrais drones. La simulation ne réimplémente pas le contrôleur de vol : elle compile pour le PC le contrôleur en C fourni avec le firmware Crazyflie et le boucle sur une dynamique de corps rigide, de sorte que les trajectoires se comportent comme sur le drone. La vérification de la dynamique a payé : le firmware suppose 27&nbsp;g alors que le modèle simulé en pesait 34&nbsp;g, et le drone se stabilisait à 0,93&nbsp;m pour une consigne de 1&nbsp;m ; en alignant les deux, il atteint 1,003&nbsp;m.</p>
+      <p class="kicker-text">La vitesse de simulation a été le second chantier. Avec deux drones, elle tournait d'abord à 0,27× le temps réel : le coût venait de Python et de l'exécutif ROS, pas de la physique. Un pas de dynamique en calcul scalaire (identique à l'original à 3·10<sup>−13</sup> près sur 20&nbsp;000 pas), aucune conversion inutile, une boucle de contrôle à 500&nbsp;Hz comme dans le firmware et plusieurs pas physiques par appel de minuterie ramènent la simulation au temps réel jusqu'à environ 10 drones, et à 0,91× à 12.</p>
+      <p class="kicker-text">Avant chaque formation (cercle, grille, cube, sphère, pyramide…), chaque drone doit recevoir une place. L'algorithme hongrois les attribue en minimisant la somme des carrés des distances : avec des trajets rectilignes parcourus en même temps, les trajectoires ne se croisent pas. Une première version testait toutes les permutations, ce qui la limitait à 9 drones — à 10, les trajectoires se croisaient. Une formation est refusée si deux drones passent à moins de 25&nbsp;cm l'un de l'autre.</p>
+      <p class="kicker-text">Limites : pas de modèle de collision dans le simulateur et aucun vrai drone testé à ce jour ; de vraies formations demanderaient aussi un système de positionnement commun.</p>
+      <div class="media-frame is-video"><video autoplay muted loop playsinline preload="auto" width="1280" height="720" poster="../assets/poster-drone-swarm.jpg" aria-label="Douze drones simulés exécutant une chorégraphie : décollage, cercle vertical, tour complet, pyramide, atterrissage"><source src="../assets/swarm_show.mp4" type="video/mp4"><source src="../assets/swarm_show.webm" type="video/webm"></video></div>
+      <p class="media-cap">12 drones : décollage, cercle vertical, tour complet, pyramide, atterrissage · simulation exécutant le contrôleur du firmware</p>
     </div>
   </div>
 </section>

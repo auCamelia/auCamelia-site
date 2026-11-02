@@ -266,7 +266,7 @@ footer .fine { font-family: var(--mono); font-size: 12px; color: var(--graphite)
 .method-list .step p { margin: 0; color: var(--ink-soft); font-size: 14.5px; }
 
 /* ---------- homepage use-case icons (inside the timeline band) ---------- */
-.usecases { display: flex; justify-content: flex-start; gap: clamp(40px, 8vw, 96px); margin-top: 22px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.3); }
+.usecases { display: flex; flex-wrap: wrap; row-gap: 24px; justify-content: flex-start; gap: clamp(40px, 8vw, 96px); margin-top: 22px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.3); }
 .uc { display: flex; align-items: center; gap: 14px; color: #fff; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.35; text-align: left; }
 .uc:hover { color: #fff; text-decoration: none; }
 .uc:hover span { text-decoration: underline; text-underline-offset: 4px; }
