@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cas d'usage — Au Camélia Engineering</title>
-<meta name="description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle, un jumeau numérique de quadrupède et un essaim de 12 drones — d'autres à venir.">
+<meta name="description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle, un jumeau numérique de quadrupède, un essaim de 12 drones et un banc de localisation de trous par courants de Foucault — d'autres à venir.">
 <link rel="canonical" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
 <link rel="alternate" hreflang="en" href="https://aucamelia.github.io/auCamelia-site/book.html">
 <link rel="alternate" hreflang="fr" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
@@ -12,17 +12,17 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Au Camélia Engineering">
 <meta property="og:title" content="Cas d'usage — Au Camélia Engineering">
-<meta property="og:description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle, un jumeau numérique de quadrupède et un essaim de 12 drones — d'autres à venir.">
+<meta property="og:description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle, un jumeau numérique de quadrupède, un essaim de 12 drones et un banc de localisation de trous par courants de Foucault — d'autres à venir.">
 <meta property="og:url" content="https://aucamelia.github.io/auCamelia-site/fr/book.html">
 <meta property="og:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cas d'usage — Au Camélia Engineering">
-<meta name="twitter:description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle, un jumeau numérique de quadrupède et un essaim de 12 drones — d'autres à venir.">
+<meta name="twitter:description" content="Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle, un jumeau numérique de quadrupède, un essaim de 12 drones et un banc de localisation de trous par courants de Foucault — d'autres à venir.">
 <meta name="twitter:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261014h">
+<link rel="stylesheet" href="../assets/style.css?v=20261014i">
 </head>
 <body>
 
@@ -42,7 +42,7 @@
   <div class="wrap">
     <span class="eyebrow">Modélisation</span>
     <h1>Démontrée, pas affirmée.</h1>
-    <p class="lede">Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle, un jumeau numérique de quadrupède et un essaim de 12 drones — d'autres à venir.</p>
+    <p class="lede">Exemples de mise en œuvre de Modéliser pour décider : une architecture de contrôle robotique pilotée par IA, une preuve de concept en vision industrielle, un jumeau numérique de quadrupède, un essaim de 12 drones et un banc de localisation de trous par courants de Foucault — d'autres à venir.</p>
   </div>
 </header>
 
@@ -98,6 +98,21 @@
       <p class="kicker-text"><strong>Mise en formation :</strong> Avant chaque formation (cercle, grille, cube, sphère, pyramide…), chaque drone doit recevoir une place. L'algorithme hongrois les attribue en minimisant la somme des carrés des distances : avec des trajets rectilignes parcourus en même temps, les trajectoires ne se croisent pas.</p>
       <div class="media-frame is-video"><video autoplay muted loop playsinline preload="auto" width="1280" height="720" poster="../assets/poster-drone-swarm.jpg" aria-label="Douze drones simulés exécutant une chorégraphie : décollage, cercle vertical, tour complet, pyramide, atterrissage"><source src="../assets/swarm_show.mp4" type="video/mp4"><source src="../assets/swarm_show.webm" type="video/webm"></video></div>
       <p class="media-cap">12 drones : décollage, cercle vertical, tour complet, pyramide, atterrissage · simulation exécutant le contrôleur du firmware</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="eddy-current">
+  <div class="wrap grid-label">
+    <span class="eyebrow">05 — Courants de Foucault</span>
+    <div>
+      <h2>Localiser des trous cachés sous une plaque d'aluminium par courants de Foucault.</h2>
+      <p class="kicker-text"><strong>Principe :</strong> Une sonde à courants de Foucault est une bobine parcourue par un courant alternatif. Près d'un métal conducteur, elle y induit des courants dont le champ opposé modifie l'impédance de la bobine ; un trou, une fissure ou de la corrosion perturbe le signal. Ces courants décroissent avec la profondeur (effet de peau) : dans l'aluminium 2024-T3, 8&nbsp;kHz donne une profondeur de peau de 1,35&nbsp;mm et permet de voir à travers 2&nbsp;mm (atténuation ×0,23), là où 100&nbsp;kHz (0,38&nbsp;mm, ×0,005) masquerait le défaut — basse fréquence pour voir en profondeur, haute fréquence pour voir la surface.</p>
+      <p class="kicker-text"><strong>Banc et exercice :</strong> Deux plaques d'aluminium de 2&nbsp;mm empilées : celle du dessous porte 31 avant-trous de Ø3,2&nbsp;mm, celle du dessus, pleine, les cache (dessinée transparente dans la vidéo). Un portique Zaber XYZ porte une tête avec trois sondes Lion Precision U5B à 120°, sur un cercle de 6&nbsp;mm de rayon, à 3&nbsp;mm au-dessus de la surface. Les positions des trous sont tirées au hasard à chaque campagne à ±5&nbsp;mm du nominal, comme une tolérance d'assemblage réaliste, et la sonde ne les connaît jamais.</p>
+      <p class="kicker-text"><strong>Localisation d'un trou :</strong> Le signal est le plus fort au-dessus du bord du trou, là où les courants se concentrent — la signature classique de l'inspection de trous de boulon. Le logiciel déplace la tête vers la sonde qui lit le plus haut, jusqu'à ce que les trois lectures soient égales : la tête est alors centrée sur le trou. Un modèle d'anneau ajusté sur jusqu'à 60 lectures donne le centre. Un déplacement fournit trois lectures, bien plus vite qu'un balayage en grille.</p>
+      <p class="kicker-text"><strong>Résultats :</strong> Sur une campagne de 31 trous avec une cible de 0,1&nbsp;mm, l'erreur moyenne est de 0,022&nbsp;mm (σ&nbsp;=&nbsp;0,0051&nbsp;mm, maximum 0,038&nbsp;mm), aucun trou ne sort de la tolérance, avec Cp&nbsp;=&nbsp;6,6 et Cpk&nbsp;=&nbsp;5,1 face aux seuils usuels de 1,33 et 1,67. Des trous partis en moyenne à 3,2&nbsp;mm du nominal (jusqu'à 4,95&nbsp;mm) sont localisés 140 fois plus précisément, en environ 54&nbsp;s par trou. Le tout en simulation : l'atténuation en profondeur suit la physique réelle, l'effet de distance et la forme de l'anneau sont des modèles empiriques ; Cp et Cpk qualifient donc l'algorithme de localisation, pas une sonde en conditions réelles.</p>
+      <div class="media-frame is-video"><video autoplay muted loop playsinline preload="auto" width="1280" height="698" poster="../assets/poster-eddy-current.jpg" aria-label="Campagne à courants de Foucault en simulation : la tête du portique localise les trous cachés sous la plaque du dessus (dessinée transparente)"><source src="../assets/ndt_campaign.mp4" type="video/mp4"><source src="../assets/ndt_campaign.webm" type="video/webm"></video></div>
+      <p class="media-cap">Campagne à courants de Foucault · portique Zaber, 3 sondes Lion Precision U5B · simulation Gazebo / ROS 2</p>
     </div>
   </div>
 </section>
