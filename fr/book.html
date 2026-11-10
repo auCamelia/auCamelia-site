@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cas d'usage — Au Camélia Engineering</title>
-<meta name="description" content="Exemples d'application de la méthode « Modéliser pour décider » : un pilotage robotique par IA, une preuve de concept en vision industrielle, le jumeau numérique d'un quadrupède, un essaim de 12 drones et un banc de localisation de trous par courants de Foucault — d'autres à venir.">
+<meta name="description" content="Exemples d'application de la méthode « Modéliser pour décider » : un pilotage robotique par IA, une preuve de concept en vision industrielle, le jumeau numérique d'un quadrupède, un essaim de 12 drones et un banc de localisation de trous par courants de Foucault et une étude d'arbitrage manuel contre hybride — d'autres à venir.">
 <link rel="canonical" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
 <link rel="alternate" hreflang="en" href="https://aucamelia.github.io/auCamelia-site/book.html">
 <link rel="alternate" hreflang="fr" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
@@ -12,12 +12,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Au Camélia Engineering">
 <meta property="og:title" content="Cas d'usage — Au Camélia Engineering">
-<meta property="og:description" content="Exemples d'application de la méthode « Modéliser pour décider » : un pilotage robotique par IA, une preuve de concept en vision industrielle, le jumeau numérique d'un quadrupède, un essaim de 12 drones et un banc de localisation de trous par courants de Foucault — d'autres à venir.">
+<meta property="og:description" content="Exemples d'application de la méthode « Modéliser pour décider » : un pilotage robotique par IA, une preuve de concept en vision industrielle, le jumeau numérique d'un quadrupède, un essaim de 12 drones et un banc de localisation de trous par courants de Foucault et une étude d'arbitrage manuel contre hybride — d'autres à venir.">
 <meta property="og:url" content="https://aucamelia.github.io/auCamelia-site/fr/book.html">
 <meta property="og:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cas d'usage — Au Camélia Engineering">
-<meta name="twitter:description" content="Exemples d'application de la méthode « Modéliser pour décider » : un pilotage robotique par IA, une preuve de concept en vision industrielle, le jumeau numérique d'un quadrupède, un essaim de 12 drones et un banc de localisation de trous par courants de Foucault — d'autres à venir.">
+<meta name="twitter:description" content="Exemples d'application de la méthode « Modéliser pour décider » : un pilotage robotique par IA, une preuve de concept en vision industrielle, le jumeau numérique d'un quadrupède, un essaim de 12 drones et un banc de localisation de trous par courants de Foucault et une étude d'arbitrage manuel contre hybride — d'autres à venir.">
 <meta name="twitter:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
   <div class="wrap">
     <span class="eyebrow">Modélisation</span>
     <h1>Démontrée, pas affirmée.</h1>
-    <p class="lede">Exemples d'application de la méthode « Modéliser pour décider » : un pilotage robotique par IA, une preuve de concept en vision industrielle, le jumeau numérique d'un quadrupède, un essaim de 12 drones et un banc de localisation de trous par courants de Foucault — d'autres à venir.</p>
+    <p class="lede">Exemples d'application de la méthode « Modéliser pour décider » : un pilotage robotique par IA, une preuve de concept en vision industrielle, le jumeau numérique d'un quadrupède, un essaim de 12 drones et un banc de localisation de trous par courants de Foucault et une étude d'arbitrage manuel contre hybride — d'autres à venir.</p>
   </div>
 </header>
 
@@ -111,9 +111,22 @@
       <p class="kicker-text"><strong>Banc et exercice :</strong> Deux plaques d'aluminium de 2&nbsp;mm empilées : celle du dessous comporte 31 trous de Ø&nbsp;3,2&nbsp;mm, celle du dessus, pleine, les masque (elle est représentée transparente dans la vidéo). Un portique Zaber XYZ déplace une tête équipée de trois sondes Lion Precision U5B disposées à 120° sur un cercle de 6&nbsp;mm de rayon, à 1&nbsp;mm au-dessus de la surface. À chaque campagne, la position réelle des trous est tirée au hasard dans un rayon de 5&nbsp;mm autour de la position nominale, comme le ferait une tolérance d'assemblage cumulée ; la sonde ne la connaît pas.</p>
       <p class="kicker-text"><strong>Localisation d'un trou :</strong> Le signal n'est pas maximal au centre du trou : les courants forment des boucles concentriques, sans courant sur l'axe de la bobine, si bien que la réponse culmine lorsque le trou se trouve à environ 2&nbsp;mm de l'axe de la sonde et fléchit légèrement quand il est centré. À chaque position de la tête, le logiciel ajoute les trois mesures moyennées à celles déjà acquises, ajuste le centre du trou sur une courbe de réponse étalonnée, puis déplace la tête sur ce centre ; il s'arrête quand deux ajustements successifs diffèrent de moins de 0,05&nbsp;mm, en trois positions en moyenne. La courbe est apprise au préalable lors d'un étalonnage (grille 7&nbsp;×&nbsp;7, 147 mesures sur un trou dédié, environ 2,5&nbsp;minutes) : changer de sonde, de fréquence, de matériau ou de hauteur de vol impose de le refaire, mais pas de modifier le code.</p>
       <p class="kicker-text"><strong>Simulation :</strong> Dans Gazebo, un plugin calcule le signal à partir d'une table établie hors ligne avec <a href="https://sourceforge.net/projects/xfemm" rel="noopener">xfemm</a>, solveur éléments finis libre issu de FEMM. Un modèle axisymétrique en régime harmonique (8&nbsp;kHz) de la bobine au-dessus des deux plaques prend en compte la réaction de la plaque sur le champ. Un trou décentré n'étant pas axisymétrique, on le reconstitue par anneaux : pour chaque rayon, on relève la variation d'impédance de la bobine due au retrait d'un anneau mince, puis on additionne ces contributions pondérées par la surface du trou comprise dans chaque couronne. Cette somme coïncide à 0,4&nbsp;% avec le calcul direct d'un trou centré.</p>
-      <p class="kicker-text"><strong>Résultats :</strong> Sur une campagne de 31 trous pour une précision visée de 0,1&nbsp;mm, l'erreur moyenne est de 0,024&nbsp;mm (écart-type σ&nbsp;=&nbsp;0,013&nbsp;mm, maximum 0,062&nbsp;mm) et aucun trou ne sort de la tolérance, avec Cp&nbsp;=&nbsp;2,55 et Cpk&nbsp;=&nbsp;1,94 pour des seuils usuels de 1,33 et 1,67. Des trous situés en moyenne à 3,16&nbsp;mm de leur position nominale (jusqu'à 4,92&nbsp;mm) sont localisés 130 fois plus précisément, en 16&nbsp;s environ par trou et 8&nbsp;minutes pour les 31.</p>
+      <p class="kicker-text"><strong>Résultats :</strong> Sur une campagne de 31 trous pour une précision visée de 0,1&nbsp;mm, l'erreur moyenne est de 0,024&nbsp;mm (écart-type σ&nbsp;=&nbsp;0,013&nbsp;mm, maximum 0,062&nbsp;mm) et aucun trou ne sort de la tolérance, avec Cp&nbsp;=&nbsp;2,55 et Cpk&nbsp;=&nbsp;1,94 pour des seuils usuels de 1,33 et 1,67. Chaque trou est localisé en 16&nbsp;s environ, soit 8&nbsp;minutes pour les 31.</p>
       <div class="media-frame is-video"><video autoplay muted loop playsinline preload="auto" width="1280" height="674" poster="../assets/poster-eddy-current.jpg" aria-label="Campagne de mesure par courants de Foucault en simulation : la tête du portique retrouve les trous masqués par la plaque du dessus (représentée transparente)"><source src="../assets/ndt_campaign.mp4" type="video/mp4"><source src="../assets/ndt_campaign.webm" type="video/webm"></video></div>
       <p class="media-cap">Campagne de mesure par courants de Foucault · portique Zaber, 3 sondes Lion Precision U5B · simulation Gazebo / ROS 2</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="trade-off">
+  <div class="wrap grid-label">
+    <span class="eyebrow">06 — Arbitrage</span>
+    <div>
+      <h2>Comparer manuel, hybride et automatisé sur plusieurs critères à la fois.</h2>
+      <p class="kicker-text"><strong>Principe :</strong> Le même cœur de planification alimente la comparaison de décisions de Modéliser pour décider : on modélise différentes répartitions des tâches entre l'opérateur et la machine, puis on compare les plans obtenus sur le temps de cycle, le coût, l'ergonomie et la flexibilité — côte à côte, et non une estimation après l'autre.</p>
+      <p class="kicker-text"><strong>Cas :</strong> Fixation de deux tronçons de fuselage d'avion le long de leur jonction orbitale. Un procédé entièrement manuel est confronté à un procédé hybride assisté par un portique, avec quatre opérateurs dans chaque cas, au moyen d'un diagramme de Gantt qui montre la durée totale (makespan) et le taux d'occupation de chaque ressource.</p>
+      <div class="media-frame is-video"><video autoplay muted loop playsinline preload="metadata" width="1080" height="600" poster="../assets/poster-trade-off.jpg" aria-label="Comparaison par diagramme de Gantt de la fixation sur la jonction orbitale d'un fuselage : procédé entièrement manuel contre procédé hybride assisté par portique, quatre opérateurs dans chaque cas"><source src="../assets/gantt-comparator.webm" type="video/webm"><source src="../assets/gantt-comparator.mp4" type="video/mp4"></video></div>
+      <p class="media-cap">Comparaison par diagramme de Gantt · jonction orbitale de fuselage · procédé entièrement manuel et hybride assisté par portique</p>
     </div>
   </div>
 </section>

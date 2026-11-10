@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Case studies — Au Camélia Engineering</title>
-<meta name="description" content="Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture, a machine-vision proof of concept, a quadruped digital twin, a 12-drone swarm and an eddy-current hole-location bench — with more to come.">
+<meta name="description" content="Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture, a machine-vision proof of concept, a quadruped digital twin, a 12-drone swarm and an eddy-current hole-location bench and a manual-versus-hybrid trade-off study — with more to come.">
 <link rel="canonical" href="https://aucamelia.github.io/auCamelia-site/book.html">
 <link rel="alternate" hreflang="en" href="https://aucamelia.github.io/auCamelia-site/book.html">
 <link rel="alternate" hreflang="fr" href="https://aucamelia.github.io/auCamelia-site/fr/book.html">
@@ -12,12 +12,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Au Camélia Engineering">
 <meta property="og:title" content="Case studies — Au Camélia Engineering">
-<meta property="og:description" content="Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture, a machine-vision proof of concept, a quadruped digital twin, a 12-drone swarm and an eddy-current hole-location bench — with more to come.">
+<meta property="og:description" content="Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture, a machine-vision proof of concept, a quadruped digital twin, a 12-drone swarm and an eddy-current hole-location bench and a manual-versus-hybrid trade-off study — with more to come.">
 <meta property="og:url" content="https://aucamelia.github.io/auCamelia-site/book.html">
 <meta property="og:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Case studies — Au Camélia Engineering">
-<meta name="twitter:description" content="Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture, a machine-vision proof of concept, a quadruped digital twin, a 12-drone swarm and an eddy-current hole-location bench — with more to come.">
+<meta name="twitter:description" content="Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture, a machine-vision proof of concept, a quadruped digital twin, a 12-drone swarm and an eddy-current hole-location bench and a manual-versus-hybrid trade-off study — with more to come.">
 <meta name="twitter:image" content="https://aucamelia.github.io/auCamelia-site/assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
   <div class="wrap">
     <span class="eyebrow">Modelling</span>
     <h1>Demonstrated, not asserted.</h1>
-    <p class="lede">Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture, a machine-vision proof of concept, a quadruped digital twin, a 12-drone swarm and an eddy-current hole-location bench — with more to come.</p>
+    <p class="lede">Examples of Modelling for Decision Making in practice: an AI-driven robotic control architecture, a machine-vision proof of concept, a quadruped digital twin, a 12-drone swarm and an eddy-current hole-location bench and a manual-versus-hybrid trade-off study — with more to come.</p>
   </div>
 </header>
 
@@ -111,9 +111,22 @@
       <p class="kicker-text"><strong>Bench and exercise:</strong> Two stacked 2&nbsp;mm aluminium plates: the bottom one carries 31 pilot holes of Ø3.2&nbsp;mm, the solid top one hides them (drawn transparent in the video). A Zaber XYZ gantry carries a head with three Lion Precision U5B probes at 120°, on a 6&nbsp;mm radius circle, 1&nbsp;mm above the surface. Hole positions are drawn at random for each campaign within ±5&nbsp;mm of nominal, like a realistic assembly tolerance, and the probe never knows them.</p>
       <p class="kicker-text"><strong>Locating a hole:</strong> The signal is not strongest over the centre of the hole: the currents are concentric loops with none on the axis of the coil, so the response peaks when the hole is about 2&nbsp;mm from the probe axis and dips slightly when it is centred. At each head position the software adds the three averaged readings to those already collected, fits the hole centre against a calibrated response curve and moves the head onto it, until two successive fits agree within 0.05&nbsp;mm — three positions on average. The curve is learned beforehand by a calibration (7&nbsp;×&nbsp;7 grid, 147 readings over a dedicated hole, about 2.5&nbsp;minutes), so changing the probe, frequency, material or lift-off means rerunning it, not changing the code.</p>
       <p class="kicker-text"><strong>Simulation:</strong> The signal is computed in Gazebo by a plugin from a table built offline with <a href="https://sourceforge.net/projects/xfemm" rel="noopener">xfemm</a>, the open-source finite-element solver derived from FEMM. A harmonic axisymmetric model (8&nbsp;kHz) of the coil above the two plates includes the reaction of the plate on the field. An off-axis hole is not axisymmetric, so it is assembled from rings: the change of coil impedance is read for a thin ring removed at each radius, then summed with the area of the hole inside each annulus. The sum matches a direct run of the centred hole to 0.4&nbsp;%.</p>
-      <p class="kicker-text"><strong>Results:</strong> On a 31-hole campaign with a 0.1&nbsp;mm target, the mean error is 0.024&nbsp;mm (σ&nbsp;=&nbsp;0.013&nbsp;mm, maximum 0.062&nbsp;mm), no hole falls outside tolerance, with Cp&nbsp;=&nbsp;2.55 and Cpk&nbsp;=&nbsp;1.94 against the usual thresholds of 1.33 and 1.67. Holes that started 3.16&nbsp;mm from nominal on average (up to 4.92&nbsp;mm) are located 130 times more precisely, in about 16&nbsp;s per hole and 8&nbsp;minutes for the 31 holes.</p>
+      <p class="kicker-text"><strong>Results:</strong> On a 31-hole campaign with a 0.1&nbsp;mm target, the mean error is 0.024&nbsp;mm (σ&nbsp;=&nbsp;0.013&nbsp;mm, maximum 0.062&nbsp;mm), no hole falls outside tolerance, with Cp&nbsp;=&nbsp;2.55 and Cpk&nbsp;=&nbsp;1.94 against the usual thresholds of 1.33 and 1.67. Locating each hole takes about 16&nbsp;s, 8&nbsp;minutes for the 31.</p>
       <div class="media-frame is-video"><video autoplay muted loop playsinline preload="auto" width="1280" height="674" poster="assets/poster-eddy-current.jpg" aria-label="Eddy-current campaign · Zaber gantry, 3 Lion Precision U5B probes · Gazebo / ROS 2 simulation"><source src="assets/ndt_campaign.mp4" type="video/mp4"><source src="assets/ndt_campaign.webm" type="video/webm"></video></div>
       <p class="media-cap">Eddy-current campaign in simulation: the gantry head locates the holes hidden under the top plate (drawn transparent)</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="trade-off">
+  <div class="wrap grid-label">
+    <span class="eyebrow">06 — Trade-off</span>
+    <div>
+      <h2>Comparing manual, hybrid and automated options on several criteria at once.</h2>
+      <p class="kicker-text"><strong>Principle:</strong> The same planning core drives the decision-comparison work of Modelling for Decision Making: different allocations of tasks between operator and machine are modelled, and the resulting plans are compared on cycle time, cost, ergonomics and flexibility — side by side, not one estimate at a time.</p>
+      <p class="kicker-text"><strong>Case:</strong> Fastening two aircraft fuselage sections along their orbital joint. A fully manual process is compared with a hybrid one assisted by a gantry, four operators each, using a Gantt chart that shows the makespan and the occupancy of every resource.</p>
+      <div class="media-frame is-video"><video autoplay muted loop playsinline preload="metadata" width="1080" height="600" poster="assets/poster-trade-off.jpg" aria-label="Gantt comparison of the fuselage orbital-joint fastening case: fully manual versus gantry-assisted hybrid, four operators each"><source src="assets/gantt-comparator.webm" type="video/webm"><source src="assets/gantt-comparator.mp4" type="video/mp4"></video></div>
+      <p class="media-cap">Gantt comparison · fuselage orbital joint · fully manual vs. gantry-assisted hybrid</p>
     </div>
   </div>
 </section>
